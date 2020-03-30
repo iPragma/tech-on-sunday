@@ -8,7 +8,7 @@ header:
     title:
       - TECH ON SUNDAY
     subtitle:
-      - Try to make technology simpler
+      - Simple solutions for lot of problems
     titleColor: 
     titleShadow: true
     titleFontSize: 44

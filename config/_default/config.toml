@@ -1,5 +1,5 @@
-baseURL = "http://example.org"
-title = "Hugo Zzo Theme"
+baseURL = "/"
+title = "Tech On Sunday"
 theme = "zzo"
 
 defaultContentLanguage = "fr"
@@ -9,7 +9,7 @@ hasCJKLanguage = true
 summaryLength = 50
 buildFuture = true
 
-copyright = "&copy;{year}, All Rights Reserved"
+copyright = "&copy; {year}, All Rights Reserved."
 timeout = 10000
 enableEmoji = true
 paginate = 13

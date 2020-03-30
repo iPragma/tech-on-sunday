@@ -7,12 +7,12 @@ hideToc: false
 enableToc: true
 enableTocContent: false
 ##author: Lee
-##authorEmoji: 👺
 tags: 
 - hugo
 - netlify
 - tutoriel
 image: /images/feature.png
+##slug: create-a-website-with-hugo-and-deploy-to-netlify
 slug: creer-un-site-avec-hugo-et-le-deployer-sur-netlify
 ---
 
@@ -24,8 +24,8 @@ Ce tutoriel présente la solution que j'ai choisie pour mon blog, à savoir un r
 
 Les outils suivants sont nécessaires pour ce tutoriel :
 
-- Git installé *-> version utilisée : 2.20.1*
-- Hugo installé *-> version utilisée : 0.62.1*
+- Git installé → *version utilisée : 2.20.1*
+- Hugo installé → *version utilisée : 0.62.1*
 - un compte Github 
 - un compte Netlify (il est possible de se connecter avec son compte Github)
 
@@ -42,37 +42,54 @@ La commande suivante va créer un nouveau projet Hugo dans le répertoire `my-fi
     hugo new site my-first-blog
     cd my-first-blog
 
-### Configurer un thème
+### Choisir un thème
 
-Il faut d'abord télécharger un thème et l'ajouter au sous-répertoire du site `themes`. Pour ce blog, j'utilise le thème [Beautiful Hugo](https://github.com/halogenica/beautifulhugo). 
+Il faut d'abord télécharger un thème et l'ajouter au sous-répertoire du site `themes`. Pour cet example, j'utilise le thème [Minimal](https://themes.gohugo.io/minimal/). 
 
     # initialise Git
     git init
 
-    # download theme
-    git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo
+    # add theme via submodule
+    git submodule add https://github.com/calintat/minimal.git themes/minimal
 
-Ensuite, il faut configurer le thème dans le fichier de configuration `config.toml`. Dans ce tutoriel, je vais reprendre le fichier exemple fourni avec le thème. Je ne rentre pas dans les détails, mais il faudra penser à éditer le fichier pour supprimer tout ce qui n'est pas utile.
+Pour obtenir un site avec un peu de contenu rapidement, le plus simple est de recopier le répertoire `exampleSite` dans la racine du site. 
 
-    cp themes/beautifulhugo/exampleSite/config.toml ./config.toml
+    cp -r themes/minimal/exampleSite/* ./
 
-### Ajouter un post
+Dans le fichier de configuration `config.toml`, modifier la ligne suivante comme indiqué
 
-Pour avoir un peu de contenu, il est possible de créer un post simple.
-
-    # Add a new post
-    hugo new posts/my-first-post.md
-
-    # Change the post status to publish
-    hugo undraft posts/my-first-post.md
+    baseURL = "/"
 
 ### Tester le site en local
 
-Enfin, le serveur inclus avec Hugo permet de visualiser le site créé.
+Enfin, il suffit démarrer le serveur inclus avec Hugo pour avoir un aperçu du site créé.
 
     hugo server 
 
 Par défaut, le nouveau site est accessible avec l'URL [http://localhost:1313](http://localhost:1313).
+
+![alt text](./local-view-site.png "view local site")
+
+{{< alert theme="info" >}}
+
+Si vous désirez juste avoir un aperçu du thème sans modifier le répertoire racine du site, mais en utilisant le contenu fourni en exemple, il est possible d'utiliser la commande suivante :
+
+    cd themes/minimal/exampleSite
+    hugo server --themesDir ../..
+
+{{< /alert >}}
+
+{{< alert theme="info" >}}
+
+La commande `hugo server` peut être utilisée avec d'autres options.
+
+    # include content marked as draft 
+    hugo server -D
+
+    # enable full re-renders on changes
+    hugo server --disableFastRender
+
+{{< /alert >}}
 
 ---
 
@@ -80,90 +97,53 @@ Par défaut, le nouveau site est accessible avec l'URL [http://localhost:1313](h
 
 ### Créer un repository Github
 
-Dans mon compte Github, je crée un nouveau repository vide pour mon site `my-first-blog`.
+Dans votre compte Github, il faut créer un nouveau repository `my-first-blog`.
 
-![alt text](./repo-create.png "Create Repository Github")
+![alt text](./github-create-repo.png "create repository github")
 
-### Ajouter tous les fichiers au repository local
+### Ajouter le site au repository local
 
-    # Add the files in the local repository
+    # add the files in the local repository
     git add .
 
-    # Commit the tracked changes
-    git commit -m "First commit"
-
-### Déclarer le repository Github et sauvegarder le projet
-
-    # Set the new remote repository
-    git remote add origin <remote repository URL>
-
-    # Push the changes in your local repository up to the remote repository
-    git push -u origin master
-
-
-    echo "# with-pattaya-girl" >> README.md
-    git init
-    git add README.md
+    # commit the tracked changes
     git commit -m "first commit"
-    git remote add origin https://github.com/iPragma/with-pattaya-girl.git
+
+### Push le site dans Github
+
+    # set the new remote repository
+    git remote add origin https://github.com/[YOUR-GITHUB-ACCOUNT]/my-first-blog.git
+
+    # push the changes in your local repository up to the remote repository
     git push -u origin master
 
 ---
 
 ## Étape 3. Déployer sur Netlify
 
-### Configuration Netlify
+### Connecter Netlify à votre hébergeur Git
 
-Cette étape n'est pas obligatoire, mais il est parfois nécessaire de créer un fichier de configuration `netlify.toml` et de préciser la version d'Hugo pour éviter certains problèmes d'incompatibilité avec le thème choisi. 
+Dans votre compte Netlify, il faut créer un nouveau site `New site from Git`.
 
-{{< code toml >}}
+![alt text](./netlify-connect-git.png "netlify connect github")
 
-[build]
-publish = "public"
-command = "hugo --gc --minify"
+Sélectionner Github
 
-[context.production.environment]
-HUGO_VERSION = "0.62.1"
-HUGO_ENV = "production"
-HUGO_ENABLEGITINFO = "true"
+### Créer un nouveau site à partir de Github
 
-[context.split1]
-command = "hugo --gc --minify --enableGitInfo"
+![alt text](./netlify-pick-repo.png "netlify pick repository")
 
-[context.split1.environment]
-HUGO_VERSION = "0.62.1"
-HUGO_ENV = "production"
+Après avoir donné l'accès à Netlify, choisir le repo `my-first-blog`.
 
-[context.deploy-preview]
-command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+### Déployer le site
 
-[context.deploy-preview.environment]
-HUGO_VERSION = "0.62.1"
+![alt text](./netlify-build-options.png "netlify build options")
 
-[context.branch-deploy]
-command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+Cliquer sur `Deploy site` et après quelques instants, Netlify fournit une URL pour accéder au site online.
 
-[context.branch-deploy.environment]
-HUGO_VERSION = "0.62.1"
+![alt text](./netlify-deploy-site.png "netlify deploy site")
 
-[context.next.environment]
-HUGO_ENABLEGITINFO = "true"
-
-{{< /code >}}
-
-### Netlify Dashboard
-
-Follow the steps on Host on Netlify to connect your Git repository to Netlify.
-
-We’ve already configured the Hugo version for Netlify in the previous step.
-
-If you’ve already setup a previous project with Netlify that you would like to replace, you can do that in your Netlify Dashboard. Go to your project, “Deploys” > “Continous Deployment”. You can change the Git repository, build command and publish directory.
-
-Sélectionnez le repo de votre projet, chez moi ce sera KrustyHack/demo-nicolashug-dev et paramétrez Netlify comme ci-dessous :
-
-<image></image>
-
-On clique sur Deploy site et on attend. A la fin on devrait avoir une url disponible en haut de la page du projet ... Votre site est déployé !
+Votre site est déployé !
 
 ---
 
@@ -171,7 +151,8 @@ On clique sur Deploy site et on attend. A la fin on devrait avoir une url dispon
 
 - https://www.rockyourcode.com/move-to-hugo-with-netlify/
 - https://gohugo.io/getting-started/quick-start/
-- https://github.com/halogenica/beautifulhugo
 - https://help.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line
 - https://www.freecodecamp.org/news/your-first-hugo-blog-a-practical-guide/
+- https://tsh.io/blog/static-site-deployment-with-netlify/
+- https://gohugo.io/hosting-and-deployment/hosting-on-netlify
   
