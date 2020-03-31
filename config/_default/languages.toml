@@ -1,13 +1,13 @@
+[fr]
+  title = "Tech Du Dimanche"
+  languageName = "Français"
+  weight = 1
+  languagedir = "ltr"
+  contentDir = "content/fr" # French
+
 # [en]
 #   title = "Tech On Sunday"
 #   languageName = "English"
 #   weight = 1
 #   languagedir = "ltr"
 #   contentDir = "content/en" # English
-
-[fr]
-  title = "Tech Du Dimanche"
-  languageName = "Français"
-  weight = 2
-  languagedir = "ltr"
-  contentDir = "content/fr" # French

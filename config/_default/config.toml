@@ -1,10 +1,10 @@
-baseURL = "/"
+baseURL = "https://www.techonsunday.com/"
 title = "Tech On Sunday"
 theme = "zzo"
 
 defaultContentLanguage = "fr"
 defaultContentLanguageInSubdir = true
-hasCJKLanguage = true
+hasCJKLanguage = false
 
 summaryLength = 50
 buildFuture = true
