@@ -71,7 +71,7 @@ Enfin, démarrer le serveur inclus avec Hugo pour avoir un aperçu du site cré�
 
 Par défaut, le nouveau site est accessible avec l'URL [http://localhost:1313](http://localhost:1313).
 
-![alt text](./local-view-site.png "view local site")
+!["view local site"](./local-view-site.png " ")
 
 {{< alert theme="info" >}}
 
@@ -102,7 +102,7 @@ La commande `hugo server` peut être utilisée avec d'autres options.
 
 Dans votre compte Github, créer un nouveau repository `my-first-blog`.
 
-![alt text](./github-create-repo.png "create repository github")
+!["create repository github"](./github-create-repo.png " ")
 
 ### Ajouter le site au repository local
 
@@ -128,23 +128,23 @@ Dans votre compte Github, créer un nouveau repository `my-first-blog`.
 
 Dans votre compte Netlify, créer un nouveau site en cliquant sur `New site from Git`.
 
-![alt text](./netlify-connect-git.png "netlify connect github")
+!["netlify connect github"](./netlify-connect-git.png " ")
 
 Sélectionner `Github`
 
 ### Créer un nouveau site à partir de Github
 
-![alt text](./netlify-pick-repo.png "netlify pick repository")
+!["netlify pick repository"](./netlify-pick-repo.png " ")
 
 Après avoir donné l'accès à Netlify, choisir le repo `my-first-blog`.
 
 ### Déployer le site
 
-![alt text](./netlify-build-options.png "netlify build options")
+!["netlify build options"](./netlify-build-options.png " ")
 
 Cliquer sur `Deploy site` et après quelques instants, Netlify fournit une URL pour accéder au site online.
 
-![alt text](./netlify-deploy-site.png "netlify deploy site")
+!["netlify deploy site"](./netlify-deploy-site.png " ")
 
 Votre site est déployé !
 

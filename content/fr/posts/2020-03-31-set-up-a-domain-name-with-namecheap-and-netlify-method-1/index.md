@@ -27,55 +27,55 @@ Dans ce post, j'expose la 1ère méthode en utilisant les serveurs DNS de Namech
 
 Dans le tableau de bord de Namecheap, cliquer sur le bouton `MANAGE` 
 
-![alt text](./namecheap-dashboard-manage.png "namecheap dashboard manage")
+!["namecheap dashboard manage"](./namecheap-dashboard-manage.png " ")
 
 Ensuite aller dans `Advanced DNS`
 
-![alt text](./namecheap-domain-basic.png "namecheap domain basic")
+!["namecheap domain basic"](./namecheap-domain-basic.png " ")
 
 Par défaut, 2 lignes sont créer pour renvoyer votre nom de domaine vers une parking page.
 
 Dans la section `DNS TEMPLATE`, il n'existe pas de template pour Netlify, utiliser le template pour **Shopify** et valider
 
-![alt text](./namecheap-dns-templates.png "namecheap dns templates")
+!["namecheap dns templates"](./namecheap-dns-templates.png " ")
 
 Il permet de générer 2 lignes
 
 * A Record, changer la valeur par l'IP du serveur Netlify `104.198.14.52` 
 * CNAME Record pour le Host `www`, changer la valeur par l'adresse du sous-domaine Netlify de votre site
 
-![alt text](./namecheap-dns-config.png "namecheap dns config")
+!["namecheap dns config"](./namecheap-dns-config.png " ")
 
 Sauvegarder tous les changements en cliquant sur le bouton `SAVE ALL CHANGES`
 
 La propagation de la configuration DNS prend un peu de temps, généralement ça se produit dans l'heure. Il est possible de vérifier l'avancée de la propagation sur un site comme [whatsmydns.net](https://www.whatsmydns.net/).
 
-![alt text](./dns-propagation-checker.png "dns propagation checker")
+!["dns propagation checker"](./dns-propagation-checker.png " ")
 
 ## Configurer netlify
 
 Dans la configuration du site Hugo créé, afficher les informations sur votre domaine
 
-![alt text](./netlify-subdomain-only.png "netlify subdomain only")
+!["netlify subdomain only"](./netlify-subdomain-only.png " ")
 
 Cliquer sur le bouton `Add custom domain`
 
-![alt text](./netlify-add-custom-domain.png "netlify add custom domain")
+!["netlify add custom domain"](./netlify-add-custom-domain.png " ")
 
 Remplir le nom de votre domaine obtenu avec Namecheap 
 
-![alt text](./netlify-domain-has-owner.png "netlify domain has owner")
+!["netlify domain has owner"](./netlify-domain-has-owner.png " ")
 
 Valider en cliquant sur `Yes, add domain`
 
 Afficher les informations HTTPS en bas de la page de configuration du domaine 
 
-![alt text](./netlify-verify-dns-config.png "netlify verify dns config")
+!["netlify verify dns config"](./netlify-verify-dns-config.png " ")
 
 Netlify peut obtenir un certificat SSL gratuitement auprès de **Let's Encrypt**. Cliquer sur `Verify DNS configuration`pour lancer la vérification de la configuration faite sur Namecheap
 
-![alt text](./netlify-provision-certif.png "netlify provision certif")
+!["netlify provision certif"](./netlify-provision-certif.png " ")
 
 Une fois la vérification DNS validée, rafraîchir la page pour afficher les informations sur votre nouveau certificat SSL
 
-![alt text](./netlify-https-enabled.png "netlify https enabled")
+!["netlify https enabled"](./netlify-https-enabled.png " ")
