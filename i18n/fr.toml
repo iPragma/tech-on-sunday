@@ -1,0 +1,80 @@
+[search-placeholder]
+other = "Recherche"
+
+[summary-dateformat]
+other = "2 Jan 2006"
+
+[reading-time]
+other = "min de lecture"
+
+[tags]
+other = "Tags"
+
+[categories]
+other = "Catégories"
+
+[series]
+other = "Séries"
+
+[archive-dateformat]
+other = "2 Jan"
+
+[talks-dateformat]
+other = "2 Jan"
+
+[single-dateformat]
+other = "2 Jan 2006"
+
+[single-related]
+other = "Voir Aussi"
+
+[single-writtenBy]
+other = "ÉCRIT PAR"
+
+[toc-label]
+other = "What's on this Page"
+
+[counter-site-pv]
+other = "Vues totales"
+
+[counter-site-uv]
+other = "Visiteurs totaux"
+
+[counter-page-pv]
+other = "vues"
+
+[donate-message]
+other = "Supporter l'auteur avec"
+
+[share-message]
+other = "Partager ce post"
+
+[contact-name]
+other = "Nom"
+
+[contact-email]
+other = "Email"
+
+[contact-message]
+other = "Message"
+
+[contact-send]
+other = "Envoyer"
+
+[tooltip-home]
+other = "Home"
+
+[tooltip-written]
+other = "Écrit le"
+
+[tooltip-modified]
+other = "Modifié le"
+
+[tooltip-reading-time]
+other = "Temps de Lecture"
+
+[showcase-overview]
+other = "Overview"
+
+[showcase-pinned]
+other = "Pinned"

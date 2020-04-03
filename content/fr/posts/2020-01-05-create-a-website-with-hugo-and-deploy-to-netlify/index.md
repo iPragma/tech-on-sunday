@@ -10,8 +10,9 @@ enableTocContent: false
 tags: 
 - hugo
 - netlify
-- tutoriel
-image: /images/feature.png
+-
+series:
+- 
 ##slug: create-a-website-with-hugo-and-deploy-to-netlify
 slug: creer-un-site-avec-hugo-et-le-deployer-sur-netlify
 ---
@@ -37,14 +38,16 @@ Si certains de ces outils sont manquants sur votre machine, une petite recherche
 
 ### Créer un projet Hugo
 
-La commande suivante va créer un nouveau projet Hugo dans le répertoire `my-first-blog`.
+Créer un nouveau projet Hugo dans le répertoire `my-first-blog`
 
     hugo new site my-first-blog
     cd my-first-blog
 
 ### Choisir un thème
 
-Il faut d'abord télécharger un thème et l'ajouter au sous-répertoire du site `themes`. Pour cet example, j'utilise le thème [Minimal](https://themes.gohugo.io/minimal/). 
+Télécharger un thème et l'ajouter au sous-répertoire du site `themes` 
+
+Pour cet example, j'utilise le thème [Minimal](https://themes.gohugo.io/minimal/). 
 
     # initialise Git
     git init
@@ -52,7 +55,7 @@ Il faut d'abord télécharger un thème et l'ajouter au sous-répertoire du site
     # add theme via submodule
     git submodule add https://github.com/calintat/minimal.git themes/minimal
 
-Pour obtenir un site avec un peu de contenu rapidement, le plus simple est de recopier le répertoire `exampleSite` dans la racine du site. 
+Pour obtenir un site avec un peu de contenu rapidement, recopier le répertoire `exampleSite` dans la racine du site. 
 
     cp -r themes/minimal/exampleSite/* ./
 
@@ -62,7 +65,7 @@ Dans le fichier de configuration `config.toml`, modifier la ligne suivante comme
 
 ### Tester le site en local
 
-Enfin, il suffit démarrer le serveur inclus avec Hugo pour avoir un aperçu du site créé.
+Enfin, démarrer le serveur inclus avec Hugo pour avoir un aperçu du site créé
 
     hugo server 
 
@@ -72,7 +75,7 @@ Par défaut, le nouveau site est accessible avec l'URL [http://localhost:1313](h
 
 {{< alert theme="info" >}}
 
-Si vous désirez juste avoir un aperçu du thème sans modifier le répertoire racine du site, mais en utilisant le contenu fourni en exemple, il est possible d'utiliser la commande suivante :
+Si vous désirez juste avoir un aperçu du thème sans modifier le répertoire racine du site, mais en utilisant le contenu fourni en exemple, exécuter la commande suivante
 
     cd themes/minimal/exampleSite
     hugo server --themesDir ../..
@@ -97,7 +100,7 @@ La commande `hugo server` peut être utilisée avec d'autres options.
 
 ### Créer un repository Github
 
-Dans votre compte Github, il faut créer un nouveau repository `my-first-blog`.
+Dans votre compte Github, créer un nouveau repository `my-first-blog`.
 
 ![alt text](./github-create-repo.png "create repository github")
 
@@ -123,11 +126,11 @@ Dans votre compte Github, il faut créer un nouveau repository `my-first-blog`.
 
 ### Connecter Netlify à votre hébergeur Git
 
-Dans votre compte Netlify, il faut créer un nouveau site `New site from Git`.
+Dans votre compte Netlify, créer un nouveau site en cliquant sur `New site from Git`.
 
 ![alt text](./netlify-connect-git.png "netlify connect github")
 
-Sélectionner Github
+Sélectionner `Github`
 
 ### Créer un nouveau site à partir de Github
 
@@ -151,7 +154,6 @@ Votre site est déployé !
 
 - https://www.rockyourcode.com/move-to-hugo-with-netlify/
 - https://gohugo.io/getting-started/quick-start/
-- https://help.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line
 - https://www.freecodecamp.org/news/your-first-hugo-blog-a-practical-guide/
 - https://tsh.io/blog/static-site-deployment-with-netlify/
 - https://gohugo.io/hosting-and-deployment/hosting-on-netlify
