@@ -8,8 +8,8 @@ enableToc: true
 enableTocContent: false
 ##author: Lee
 tags: 
-- hugo
-- netlify
+- Hugo
+- Netlify
 -
 series:
 - 

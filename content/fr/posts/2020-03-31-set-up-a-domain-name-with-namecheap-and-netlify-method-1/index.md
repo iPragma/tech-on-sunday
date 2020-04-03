@@ -8,8 +8,8 @@ enableToc: true
 enableTocContent: false
 ##author: Lee
 tags: 
-- namecheap
-- netlify
+- Namecheap
+- Netlify
 -
 series:
 -

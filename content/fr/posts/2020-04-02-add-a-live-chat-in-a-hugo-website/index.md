@@ -9,7 +9,7 @@ enableTocContent: false
 ##author: Lee
 tags: 
 - Hugo
-- Chat
+- Live Chat
 -
 series:
 - Live Chat
