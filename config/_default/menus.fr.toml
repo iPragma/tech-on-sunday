@@ -1,7 +1,7 @@
 [[main]]
   identifier = "about"
-  name = "About"
-  url = "about"
+  name = "À propos"
+  url = "a-propos"
   weight = 1
 
 # [[main]]
@@ -18,6 +18,6 @@
 
 [[main]]
   identifier = "series"
-  name = "Series"
+  name = "Séries"
   url = "series"
   weight = 6

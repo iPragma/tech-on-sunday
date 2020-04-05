@@ -23,6 +23,17 @@ Si vous achetez votre nom de domaine avec Netlify, la configuration est automati
 
 Dans ce post, j'expose la 1ère méthode en utilisant les serveurs DNS de Namecheap.
 
+---
+
+## Prérequis
+
+Les éléments suivants sont nécessaires pour ce tutoriel
+
+- un site Hugo  
+- un compte [Namecheap](https://www.namecheap.com/)
+
+---
+
 ## Configurer Namecheap
 
 Dans le tableau de bord de Namecheap, cliquer sur le bouton `MANAGE` 
@@ -52,6 +63,8 @@ La propagation de la configuration DNS prend un peu de temps, généralement ça
 
 !["dns propagation checker"](./dns-propagation-checker.png " ")
 
+---
+
 ## Configurer netlify
 
 Dans la configuration du site Hugo créé, afficher les informations sur votre domaine
@@ -79,3 +92,5 @@ Netlify peut obtenir un certificat SSL gratuitement auprès de **Let's Encrypt**
 Une fois la vérification DNS validée, rafraîchir la page pour afficher les informations sur votre nouveau certificat SSL
 
 !["netlify https enabled"](./netlify-https-enabled.png " ")
+
+---

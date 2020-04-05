@@ -24,7 +24,7 @@
   </a>  
 
   <div class="navbar__menu">
-    <!-- {{ partial "navbar/select-theme" . }} -->
+    {{ partial "navbar/select-theme" . }}
     {{ $current := . }}
     {{ range .Site.Menus.main }}
       {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}

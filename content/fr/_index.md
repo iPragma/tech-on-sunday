@@ -7,8 +7,8 @@ header:
     align: center
     title:
       - TECH ON SUNDAY
-    subtitle:
-      - Simple solutions for lot of problems
+    # subtitle:
+    #   - 
     titleColor: 
     titleShadow: true
     titleFontSize: 44

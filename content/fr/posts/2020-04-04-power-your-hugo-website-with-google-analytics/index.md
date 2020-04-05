@@ -9,7 +9,7 @@ enableTocContent: false
 ##author: Lee
 tags: 
 - Hugo
-- Google 
+- Google
 -
 series:
 -

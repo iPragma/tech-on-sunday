@@ -34,13 +34,18 @@ Il existe d'autres solutions gratuites
 * [Zendesk](https://www.zoho.com/desk/live-chat-ticketing-software.html)
 * [Pure Chat](https://purechat.com/)
 
+Je ferai un post plus tard pour présenter toutes ces solutions. 
+
+---
 
 ## Prérequis
 
-Les outils suivants sont nécessaires pour ce tutoriel :
+Les éléments suivants sont nécessaires pour ce tutoriel
 
 - un site Hugo  
 - un compte [Tawk.to](https://www.tawk.to/)
+
+---
 
 ## Générer le code du widget Tawk.to
 
@@ -52,6 +57,10 @@ Avant de pouvoir installer le live chat sur un site Hugo, générer le code à i
 !["tawk.to setup 4"](./tawk-to-setup-4.png " ")
 
 Sur le dernier écran, le code généré peut maintenant être installé sur votre site Hugo.
+
+---
+
+## Installer le widget sur un site
 
 Comme il est suggéré, il faut copier le code généré avant la balise `</body>`. Je vais reprendre l'exemple du site créé dans un [tutoriel précédent](posts/2020-01-05-create-a-website-with-hugo-and-deploy-to-netlify/) avec le thème **Minimal**.
 
@@ -70,8 +79,6 @@ Créer un fichier `body-close.html` dans le répertoire `/layouts/partials`et co
     })();
     </script>
     <!--End of Tawk.to Script-->
-
-## Installer le widget sur un site
 
 Une fois configuré, le widget [Tawk.to](https://www.tawk.to/) apparaît en bas de chaque page du site.
 

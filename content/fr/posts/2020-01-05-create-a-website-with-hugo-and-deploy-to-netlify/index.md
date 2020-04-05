@@ -21,9 +21,11 @@ slug: creer-un-site-avec-hugo-et-le-deployer-sur-netlify
 
 Ce tutoriel présente la solution que j'ai choisie pour mon blog, à savoir un repository **Github** dans lequel je sauvegarde le code source du site et **Netlify** pour héberger et déployer mon site **Hugo** à chaque mise à jour. 
 
+---
+
 ## Prérequis
 
-Les outils suivants sont nécessaires pour ce tutoriel :
+Les outils suivants sont nécessaires pour ce tutoriel
 
 - Git installé → *version utilisée : 2.20.1*
 - Hugo installé → *version utilisée : 0.62.1*
